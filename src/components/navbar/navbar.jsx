@@ -1,4 +1,3 @@
-import React from "react";
 import "./Navbar.css";
 import logo from "../assets/logo_placeholder.png";
 import cart from "../assets/shopping-cart-line.svg";
