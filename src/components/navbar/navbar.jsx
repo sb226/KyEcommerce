@@ -5,7 +5,7 @@ import cart from "../assets/shopping-cart-line.svg";
 import user from "../assets/user-line.svg";
 import { Link } from "react-router-dom";
 
-function Navbar() {
+export default function Navbar() {
   return (
     <div className="navbar">
       <div className="nav-logo">
@@ -39,5 +39,3 @@ function Navbar() {
     </div>
   );
 }
-
-export default Navbar;

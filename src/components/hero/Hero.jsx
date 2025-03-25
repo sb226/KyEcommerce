@@ -2,7 +2,7 @@ import React from "react";
 import "./Hero.css";
 import shoppingCart from "../assets/shoppingCart.png";
 
-function Hero() {
+export default function Hero() {
   return (
     <div className="container">
       <div className="hero-left">
@@ -18,5 +18,3 @@ function Hero() {
     </div>
   );
 }
-
-export default Hero;

@@ -1,7 +1,5 @@
 import React from "react";
 
-function LoginSignup() {
+export default function LoginSignup() {
   return <div>This is a log in page</div>;
 }
-
-export default LoginSignup;

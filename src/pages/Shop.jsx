@@ -1,7 +1,7 @@
 import React from "react";
 import Hero from "../components/hero/Hero";
 
-function Shop() {
+export default function Shop() {
   return (
     <div>
       <Hero />
@@ -9,5 +9,3 @@ function Shop() {
     </div>
   );
 }
-
-export default Shop;
