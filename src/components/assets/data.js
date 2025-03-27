@@ -27,6 +27,6 @@ export async function fetchProducts(pickRandom = false) {
 }
 
 function getRandomProduct(data) {
-  const randomIndex = Math.ceil(Math.random() * data.length);
+  const randomIndex = Math.floor(Math.random() * data.length);
   return data[randomIndex];
 }
