@@ -16,14 +16,14 @@ export default function Navbar() {
         <li className="link">
           <Link to="/">Home</Link>
         </li>
-        <li id="featureLink" className="link">
-          <a href="#">Features</a>
-        </li>
-        <li id="priceLink" className="link">
-          <a href="#">Pricing</a>
-        </li>
         <li id="aboutLink" className="link">
           <a href="#">About</a>
+        </li>
+        <li id="featureLink" className="link">
+          <a href="#">Shopping</a>
+        </li>
+        <li id="priceLink" className="link">
+          <a href="#">Contact Us</a>
         </li>
       </ul>
       <div className="nav-login-cart">

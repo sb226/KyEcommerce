@@ -7,14 +7,14 @@ export default function Popular() {
   const [loading, setLoading] = useState(false);
   const [products, setProducts] = useState([]);
 
-  useEffect(() => {
-    async function getProduct() {
-      setLoading(true);
-      const data = await fetchProducts();
-      setProducts(data);
-      setLoading(false);
-    }
+  async function getProduct() {
+    setLoading(true);
+    const data = await fetchProducts();
+    setProducts(data);
+    setLoading(false);
+  }
 
+  useEffect(() => {
     getProduct();
   }, []);
 

@@ -5,12 +5,12 @@ import "./Offers.css";
 export default function Offers() {
   const [product, setProduct] = useState({});
 
-  useEffect(() => {
-    async function getProduct() {
-      const data = await fetchProducts(true);
-      setProduct(data);
-    }
+  async function getProduct() {
+    const data = await fetchProducts(true);
+    setProduct(data);
+  }
 
+  useEffect(() => {
     getProduct();
   }, []);
 
