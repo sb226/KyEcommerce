@@ -7,6 +7,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import arrowRight from "../assets/arrow-right-solid.svg";
 import arrowLeft from "../assets/arrow-left-solid.svg";
+import category_data from "../assets/cat-data";
 
 export default function CategoryList() {
   const [products, setProducts] = useState([]);
@@ -30,11 +31,7 @@ export default function CategoryList() {
   const SampleNextArrow = (props) => {
     const { className, onClick } = props;
     return (
-      <div
-        className={className}
-        // style={{ background: "red" }}
-        onClick={onClick}
-      >
+      <div className={className} onClick={onClick}>
         <img src={arrowRight} alt="" className="arrows" />
       </div>
     );
@@ -43,11 +40,7 @@ export default function CategoryList() {
   const SamplePrevArrow = (props) => {
     const { className, onClick } = props;
     return (
-      <div
-        className={className}
-        // style={{ background: "green" }}
-        onClick={onClick}
-      >
+      <div className={className} onClick={onClick}>
         <img src={arrowLeft} alt="" className="arrows" />
       </div>
     );
@@ -58,7 +51,7 @@ export default function CategoryList() {
     infinite: false,
     speed: 500,
     slidesToShow: 4,
-    slidesToScroll: 1,
+    slidesToScroll: 4,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
   };
@@ -69,11 +62,11 @@ export default function CategoryList() {
       <hr />
       <div className="category-list">
         <Slider {...settings}>
-          {products.slice(0, 6).map((item, index) => (
+          {category_data.map((item, index) => (
             <CategoryItem
               key={index}
-              thumbnail={item.thumbnail}
-              title={item.title}
+              thumbnail={item.image}
+              title={item.name}
             />
           ))}
         </Slider>
