@@ -1,0 +1,20 @@
+.category-item-container {
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.178);
+}
+
+.category-item {
+  font-weight: 500;
+  padding: 10px;
+}
+
+.category-item-button {
+  margin: 10px 0;
+  padding: 5px;
+  border-radius: 75px;
+  background: red;
+  color: white;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+}
