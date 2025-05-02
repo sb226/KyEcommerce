@@ -11,7 +11,7 @@ export async function fetchProducts(pickRandom = false) {
   }
 
   try {
-    const response = await fetch(`https://dummyjson.com/products?limit=20`);
+    const response = await fetch(`https://dummyjson.com/products`);
     const result = await response.json();
     if (result && result.products && result.products.length) {
       localStorage.setItem(cachedKey, JSON.stringify(result.products));
@@ -20,6 +20,7 @@ export async function fetchProducts(pickRandom = false) {
       }
       return result.products;
     }
+    return [];
   } catch (error) {
     console.log(error);
     return [];

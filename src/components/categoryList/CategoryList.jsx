@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { fetchProducts } from "../assets/data";
+import { fetchCategory } from "../assets/cat-data";
 import CategoryItem from "../categoryItem/CategoryItem";
 import "./CategoryList.css";
 import "slick-carousel/slick/slick.css";
@@ -7,16 +7,15 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import arrowRight from "../assets/arrow-right-solid.svg";
 import arrowLeft from "../assets/arrow-left-solid.svg";
-import category_data from "../assets/cat-data";
 
 export default function CategoryList() {
-  const [products, setProducts] = useState([]);
+  const [category, setCategory] = useState([]);
   const [loading, setLoading] = useState(false);
 
   async function getProduct() {
     setLoading(true);
-    const data = await fetchProducts();
-    setProducts(data);
+    const data = await fetchCategory();
+    setCategory(data);
     setLoading(false);
   }
 
@@ -55,14 +54,14 @@ export default function CategoryList() {
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
   };
-
+  console.log(category);
   return (
     <div className="category-list-container">
       <h1>SHOP BY CATEGORY</h1>
       <hr />
       <div className="category-list">
         <Slider {...settings}>
-          {category_data.map((item, index) => (
+          {category.map((item, index) => (
             <CategoryItem
               key={index}
               thumbnail={item.image}
