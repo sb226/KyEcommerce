@@ -54,7 +54,7 @@ export default function CategoryList() {
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
   };
-  console.log(category);
+
   return (
     <div className="category-list-container">
       <h1>SHOP BY CATEGORY</h1>
@@ -66,6 +66,7 @@ export default function CategoryList() {
               key={index}
               thumbnail={item.image}
               title={item.name}
+              slug={item.slug}
             />
           ))}
         </Slider>

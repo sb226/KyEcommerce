@@ -28,3 +28,17 @@ export async function fetchCategory() {
     return [];
   }
 }
+
+export async function getCategoryNameList() {
+  const cached = localStorage.getItem("categories");
+
+  if (cached) {
+    return JSON.parse(cached);
+  } else {
+    const response = await fetch(
+      "https://dummyjson.com/products/category-list"
+    );
+    const result = await response.json();
+    return result;
+  }
+}
