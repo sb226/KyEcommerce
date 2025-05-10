@@ -11,10 +11,15 @@
   gap: 20px;
 }
 
-.item-original-price {
+.item-original-price-with-discount {
   font-size: 18px;
   font-weight: 500;
   text-decoration: line-through;
+}
+
+.item-original-price {
+  font-size: 18px;
+  font-weight: 500;
 }
 
 .item-new-price {

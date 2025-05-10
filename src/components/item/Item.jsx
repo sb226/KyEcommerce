@@ -14,7 +14,15 @@ export default function Item(props) {
         {newPrice !== null && (
           <div className="item-new-price">${newPrice.toFixed(2)}</div>
         )}
-        <div className="item-original-price">${props.price}</div>
+        <div
+          className={
+            props.discountPercentage
+              ? "item-original-price-with-discount"
+              : "item-original-price"
+          }
+        >
+          ${props.price}
+        </div>
       </div>
     </div>
   );
