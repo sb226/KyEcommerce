@@ -1,27 +1,27 @@
 import "./Item.css";
 
 export default function Item(props) {
-  let discountPercentage = props.discountPercentage;
+  const { discountPercentage, price, thumbnail, title } = props;
   let newPrice = discountPercentage
-    ? props.price - (props.price * discountPercentage) / 100
+    ? price - (price * discountPercentage) / 100
     : null;
 
   return (
     <div className="item-container">
-      <img src={props.thumbnail} alt="" />
-      <p>{props.title}</p>
+      <img src={thumbnail} alt="" />
+      <p>{title}</p>
       <div className="item-prices">
         {newPrice !== null && (
           <div className="item-new-price">${newPrice.toFixed(2)}</div>
         )}
         <div
           className={
-            props.discountPercentage
+            discountPercentage
               ? "item-original-price-with-discount"
               : "item-original-price"
           }
         >
-          ${props.price}
+          ${price}
         </div>
       </div>
     </div>
