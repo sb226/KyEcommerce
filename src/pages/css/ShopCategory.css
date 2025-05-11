@@ -8,6 +8,7 @@
   display: flex;
   margin-left: auto;
   cursor: pointer;
+  gap: 8px;
 }
 
 .shop-category-sort img {
@@ -15,7 +16,6 @@
   height: auto;
   display: inline-block;
   vertical-align: middle;
-  margin-left: 8px;
 }
 
 .shop-category-products {
