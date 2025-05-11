@@ -31,6 +31,7 @@ export default function NewCollection() {
           return (
             <Item
               key={index}
+              id={item.id}
               thumbnail={item.thumbnail}
               title={item.title}
               discountPercentage={item.discountPercentage}

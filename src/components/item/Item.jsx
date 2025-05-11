@@ -1,14 +1,17 @@
+import { Link } from "react-router-dom";
 import "./Item.css";
 
 export default function Item(props) {
-  const { discountPercentage, price, thumbnail, title } = props;
+  const { discountPercentage, price, thumbnail, title, id } = props;
   let newPrice = discountPercentage
     ? price - (price * discountPercentage) / 100
     : null;
 
   return (
     <div className="item-container">
-      <img src={thumbnail} alt="" />
+      <Link to={`/product/${id}`}>
+        <img src={thumbnail} alt="" />
+      </Link>
       <p>{title}</p>
       <div className="item-prices">
         {newPrice !== null && (

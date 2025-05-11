@@ -7,6 +7,7 @@ import LoginSignup from "./pages/LoginSignup";
 import Footer from "./components/footer/Footer";
 import ShopCategory from "./pages/ShopCategory";
 import PageNotFound from "./pages/PageNotFound";
+import Product from "./pages/Products";
 
 function App() {
   return (
@@ -17,7 +18,10 @@ function App() {
           <Route path="/" element={<Shop />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/login" element={<LoginSignup />} />
-          <Route path="category/:categoryName" element={<ShopCategory />} />
+          <Route path="/category/:categoryName" element={<ShopCategory />} />
+          <Route path="/product" element={<Product />}>
+            <Route path=":productId" element={<Product />} />
+          </Route>
           <Route path="*" element={<PageNotFound />} />
         </Routes>
         <Footer />
