@@ -8,7 +8,7 @@ import ShopCategory from "./pages/ShopCategory";
 import PageNotFound from "./pages/PageNotFound";
 import Product from "./pages/Products";
 
-export default function Routers() {
+export default function Router() {
   return (
     <BrowserRouter>
       <Navbar />
