@@ -4,8 +4,8 @@ import { useContext, useEffect, useState } from "react";
 import { ShopContext } from "../context/ShopContext";
 import Item from "../components/item/Item";
 import { getCategoryNameList } from "../components/assets/cat-data";
-import dropdownArrow from "../components/assets/caret-down-solid.svg";
 import "./css/ShopCategory.css";
+import { IoMdArrowDropdown } from "react-icons/io";
 
 export default function ShopCategory() {
   const [allowedParam, setAllowedParam] = useState(null);
@@ -32,7 +32,7 @@ export default function ShopCategory() {
   return (
     <div className="shop-category-container">
       <div className="shop-category-sort">
-        Sort by <img src={dropdownArrow} alt="" />
+        Sort by <IoMdArrowDropdown size={30} />
       </div>
       <div className="shop-category-products">
         {products.map((item, index) => {

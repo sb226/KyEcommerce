@@ -5,8 +5,7 @@ import "./CategoryList.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import arrowRight from "../assets/arrow-right-solid.svg";
-import arrowLeft from "../assets/arrow-left-solid.svg";
+import { FaChevronRight, FaChevronLeft } from "react-icons/fa";
 
 export default function CategoryList() {
   const [category, setCategory] = useState([]);
@@ -31,7 +30,7 @@ export default function CategoryList() {
     const { className, onClick } = props;
     return (
       <div className={className} onClick={onClick}>
-        <img src={arrowRight} alt="" className="arrows" />
+        <FaChevronRight size={20} style={{ color: "black" }} />
       </div>
     );
   };
@@ -40,7 +39,7 @@ export default function CategoryList() {
     const { className, onClick } = props;
     return (
       <div className={className} onClick={onClick}>
-        <img src={arrowLeft} alt="" className="arrows" />
+        <FaChevronLeft size={20} style={{ color: "black" }} />
       </div>
     );
   };
