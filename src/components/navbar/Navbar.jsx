@@ -1,8 +1,8 @@
 import "./Navbar.css";
 import logo from "../assets/logo_placeholder.png";
-import cart from "../assets/shopping-cart-line.svg";
-import user from "../assets/user-line.svg";
 import { Link } from "react-router-dom";
+import { FaRegUser } from "react-icons/fa";
+import { RiShoppingCartLine } from "react-icons/ri";
 
 export default function Navbar() {
   return (
@@ -28,10 +28,10 @@ export default function Navbar() {
       </ul>
       <div className="nav-login-cart">
         <Link to="/login">
-          <img src={user} alt="" />
+          <FaRegUser size={30} style={{ color: "black" }} />
         </Link>
         <Link to="/cart" className="nav-cart">
-          <img src={cart} alt="" />
+          <RiShoppingCartLine size={32} style={{ color: "black" }} />
           <div className="nav-cart-count">0</div>
         </Link>
       </div>
