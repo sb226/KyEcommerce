@@ -6,6 +6,7 @@ import Item from "../components/item/Item";
 import { getCategoryNameList } from "../components/assets/cat-data";
 import "./css/ShopCategory.css";
 import { IoMdArrowDropdown } from "react-icons/io";
+import Breadcrum from "../components/breadcrum/Breadcrum";
 
 export default function ShopCategory() {
   const [allowedParam, setAllowedParam] = useState(null);
@@ -22,21 +23,29 @@ export default function ShopCategory() {
   const { categoryName } = useParams();
 
   if (allowedParam === null) {
-    return <p>Loading...</p>;
+    return <></>;
   }
 
   if (!allowedParam.includes(categoryName)) {
     return <PageNotFound />;
   }
 
+  let items = [
+    { label: "Home", link: "/" },
+    { label: "Shop", link: "/" },
+    { label: `${categoryName}` },
+  ];
+
   return (
     <div className="shop-category-container">
+      <Breadcrum crumbs={items} />
       <div className="shop-category-sort">
         Sort by <IoMdArrowDropdown size={30} />
       </div>
       <div className="shop-category-products">
-        {products.map((item, index) => {
-          if (categoryName === item.category) {
+        {products
+          .filter((item) => item.category === categoryName)
+          .map((item, index) => {
             return (
               <Item
                 key={index}
@@ -47,10 +56,7 @@ export default function ShopCategory() {
                 price={item.price}
               />
             );
-          } else {
-            return null;
-          }
-        })}
+          })}
       </div>
       <div className="shop-category-load-more">Load More</div>
     </div>
