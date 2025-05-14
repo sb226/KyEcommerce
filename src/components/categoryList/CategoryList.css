@@ -57,5 +57,5 @@
 
 .slick-arrow.slick-prev.slick-disabled,
 .slick-arrow.slick-next.slick-disabled {
-  opacity: 0.5;
+  display: none;
 }

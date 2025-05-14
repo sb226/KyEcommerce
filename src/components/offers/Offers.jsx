@@ -3,11 +3,11 @@ import { useState, useEffect } from "react";
 import "./Offers.css";
 
 export default function Offers() {
-  const [product, setProduct] = useState({});
+  const [image, setImage] = useState("");
 
   async function getProduct() {
     const data = await fetchProducts(true);
-    setProduct(data);
+    setImage(data.images[0]);
   }
 
   useEffect(() => {
@@ -22,7 +22,7 @@ export default function Offers() {
         <button>Check Now</button>
       </div>
       <div className="offers-right">
-        <img src={product.thumbnail} alt="" />
+        <img src={image} alt="" />
       </div>
     </div>
   );

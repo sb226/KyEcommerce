@@ -1,0 +1,43 @@
+.description-box-container {
+  margin: 120px 170px;
+}
+
+.description-box-nav {
+  display: flex;
+}
+
+.description-box-nav-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 600;
+  width: 170px;
+  height: 70px;
+  border: 1px solid black;
+  border-bottom: none;
+  cursor: default;
+}
+
+.description-box-nav-box.fade {
+  color: grey;
+  background: rgba(128, 128, 128, 0.342);
+}
+
+.review {
+  border-left: none;
+}
+
+.fade {
+  cursor: pointer;
+}
+
+.description-box-description {
+  border: 1px solid black;
+  padding: 48px;
+  padding-bottom: 70px;
+}
+
+.show {
+  display: none;
+}

@@ -1,0 +1,5 @@
+.star-rating-container {
+  display: flex;
+  color: red;
+  gap: 5px;
+}

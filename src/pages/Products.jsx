@@ -3,6 +3,8 @@ import { ShopContext } from "../context/ShopContext";
 import { useParams } from "react-router-dom";
 import Breadcrum from "../components/breadcrum/Breadcrum";
 import { fetchProducts } from "../components/assets/data";
+import ProductDisplay from "../components/productDisplay/ProductDisplay";
+import DescriptionBox from "../components/descriptionBox/DescriptionBox";
 
 export default function Product() {
   const { products } = useContext(ShopContext);
@@ -25,9 +27,18 @@ export default function Product() {
     return <></>;
   }
 
+  // Standard breadcrumb for this page
+  let items = [
+    { label: "Home", link: "/" },
+    { label: "Shop", link: "/" },
+    { label: `${product.category}`, link: `/category/${product.category}` },
+    { label: `${product.title}` },
+  ];
   return (
     <div>
-      <Breadcrum product={product}></Breadcrum>
+      <Breadcrum crumbs={items} />
+      <ProductDisplay product={product} />
+      <DescriptionBox product={product} />
     </div>
   );
 }
