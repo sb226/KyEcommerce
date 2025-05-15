@@ -1,7 +1,9 @@
+import { useState } from "react";
 import RatingStar from "../ratingStar/RatingStar";
 import "./ProductDisplay.css";
 
 export default function ProductDisplay(props) {
+  const [imageIndex, setImageIndex] = useState(0);
   const { product } = props;
   const {
     discountPercentage,
@@ -27,12 +29,21 @@ export default function ProductDisplay(props) {
     <div className="productdisplay-container">
       <div className="productdisplay-left">
         <div className="productdisplay-img-list">
-          {images.map((img) => (
-            <img src={img} alt="" />
+          {images.map((img, index) => (
+            <img
+              key={index}
+              src={img}
+              alt=""
+              onClick={() => setImageIndex(index)}
+            />
           ))}
         </div>
         <div className="productdisplay-img">
-          <img className="productdisplay-img-main" src={images[0]} alt="" />
+          <img
+            className="productdisplay-img-main"
+            src={images[imageIndex]}
+            alt=""
+          />
         </div>
       </div>
       <div className="productdisplay-right">
