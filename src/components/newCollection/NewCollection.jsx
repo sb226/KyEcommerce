@@ -1,26 +1,9 @@
 import "./NewCollection.css";
 import Item from "../item/Item";
-import { fetchProducts } from "../assets/data";
-import { useState, useEffect } from "react";
+import useProduct from "../../hook/useProduct";
 
 export default function NewCollection() {
-  const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(false);
-
-  async function getProduct() {
-    setLoading(true);
-    const data = await fetchProducts();
-    setProducts(data);
-    setLoading(false);
-  }
-
-  useEffect(() => {
-    getProduct();
-  }, []);
-
-  if (loading) {
-    return <div>Loading data... Please wait.</div>;
-  }
+  const { products } = useProduct();
 
   return (
     <div className="new-collections">

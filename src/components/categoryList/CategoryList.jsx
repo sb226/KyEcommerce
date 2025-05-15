@@ -1,11 +1,11 @@
-import { useState, useEffect } from "react";
-import { fetchCategory } from "../assets/cat-data";
-import CategoryItem from "../categoryItem/CategoryItem";
 import "./CategoryList.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Slider from "react-slick";
+import { useState, useEffect } from "react";
+import { fetchCategory } from "../../api/cat-data";
 import { FaChevronRight, FaChevronLeft } from "react-icons/fa";
+import CategoryItem from "../categoryItem/CategoryItem";
+import Slider from "react-slick";
 
 export default function CategoryList() {
   const [category, setCategory] = useState([]);

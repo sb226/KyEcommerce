@@ -1,20 +1,10 @@
-import { createContext, useEffect, useState } from "react";
-import { fetchProducts } from "../components/assets/data";
+import { createContext } from "react";
+import useProduct from "../hook/useProduct";
 
 export const ShopContext = createContext(null);
 
 export default function ShopContextProvider(props) {
-  const [products, setProducts] = useState([]);
-
-  useEffect(() => {
-    async function getProduct() {
-      const data = await fetchProducts();
-      setProducts(data);
-    }
-    getProduct();
-  }, []);
-
-  const contextValue = { products };
+  const contextValue = useProduct();
 
   return (
     <ShopContext.Provider value={contextValue}>

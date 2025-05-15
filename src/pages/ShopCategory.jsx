@@ -1,26 +1,27 @@
 import { useParams } from "react-router-dom";
 import PageNotFound from "./PageNotFound";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useMemo } from "react";
 import { ShopContext } from "../context/ShopContext";
 import Item from "../components/item/Item";
-import { getCategoryNameList } from "../components/assets/cat-data";
 import "./css/ShopCategory.css";
 import { IoMdArrowDropdown } from "react-icons/io";
 import Breadcrum from "../components/breadcrum/Breadcrum";
+import useCategoryList from "../hook/useCategoryList";
 
 export default function ShopCategory() {
-  const [allowedParam, setAllowedParam] = useState(null);
+  const { allowedParam } = useCategoryList();
   const { products } = useContext(ShopContext);
-
-  useEffect(() => {
-    async function getCategoryList() {
-      const data = await getCategoryNameList();
-      setAllowedParam(data);
-    }
-    getCategoryList();
-  }, []);
-
   const { categoryName } = useParams();
+  const crumbs = [
+    { label: "Home", link: "/" },
+    { label: "Shop", link: "/" },
+    { label: `${categoryName}` },
+  ];
+
+  // This is not a large list so not sure if this is necessary
+  const filteredProducts = useMemo(() => {
+    return products.filter((item) => item.category === categoryName);
+  }, [products, categoryName]);
 
   if (allowedParam === null) {
     return <></>;
@@ -30,33 +31,25 @@ export default function ShopCategory() {
     return <PageNotFound />;
   }
 
-  let items = [
-    { label: "Home", link: "/" },
-    { label: "Shop", link: "/" },
-    { label: `${categoryName}` },
-  ];
-
   return (
     <div className="shop-category-container">
-      <Breadcrum crumbs={items} />
+      <Breadcrum crumbs={crumbs} />
       <div className="shop-category-sort">
         Sort by <IoMdArrowDropdown size={30} />
       </div>
       <div className="shop-category-products">
-        {products
-          .filter((item) => item.category === categoryName)
-          .map((item, index) => {
-            return (
-              <Item
-                key={index}
-                id={item.id}
-                thumbnail={item.thumbnail}
-                title={item.title}
-                discountPercentage={item.discountPercentage}
-                price={item.price}
-              />
-            );
-          })}
+        {filteredProducts.map((item, index) => {
+          return (
+            <Item
+              key={index}
+              id={item.id}
+              thumbnail={item.thumbnail}
+              title={item.title}
+              discountPercentage={item.discountPercentage}
+              price={item.price}
+            />
+          );
+        })}
       </div>
       <div className="shop-category-load-more">Load More</div>
     </div>

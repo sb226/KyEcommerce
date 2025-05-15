@@ -32,10 +32,16 @@
   cursor: pointer;
 }
 
-.description-box-description {
+.description-box-description,
+.description-box-ranking {
   border: 1px solid black;
   padding: 48px;
   padding-bottom: 70px;
+}
+
+.description-box-ranking {
+  max-height: 200px;
+  overflow-y: scroll;
 }
 
 .show {

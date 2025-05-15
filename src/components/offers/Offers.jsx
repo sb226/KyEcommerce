@@ -1,6 +1,6 @@
-import { fetchProducts } from "../assets/data";
-import { useState, useEffect } from "react";
 import "./Offers.css";
+import { fetchProducts } from "../../api/data";
+import { useState, useEffect } from "react";
 
 export default function Offers() {
   const [image, setImage] = useState("");
