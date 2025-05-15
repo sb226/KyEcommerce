@@ -40,10 +40,36 @@
 }
 
 .description-box-ranking {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
   max-height: 200px;
   overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .show {
   display: none;
+}
+
+.review-box {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  padding: 20px 30px;
+  background: rgba(128, 128, 128, 0.322);
+}
+
+.rating-score {
+  display: flex;
+  gap: 5px;
+}
+
+.review-box p {
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.review-box span {
+  font-weight: 600;
 }

@@ -27,13 +27,15 @@ export default function DescriptionBox(props) {
         <div className="description-box-ranking">
           {reviews.map((review) => (
             <div className="review-box">
-              <RatingStar rating={review.rating} size={20} />
-              <p>{review.comment}</p>
+              <div className="rating-score">
+                <RatingStar rating={review.rating} size={20} />({review.rating})
+              </div>
+              <p>"{review.comment}"</p>
               <div>
                 <span>By: </span>
                 {review.reviewerName}
               </div>
-              <div>{new Date(review.date).toLocaleDateString("en-GB")}</div>
+              {new Date(review.date).toLocaleDateString("en-GB")}
             </div>
           ))}
         </div>
