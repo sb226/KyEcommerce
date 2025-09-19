@@ -7,9 +7,9 @@ export default function Hero() {
     <div className="container">
       <div className="hero-left">
         <h1>
-          DO YOU WANT TO BUY SOME <span>CHEAP</span> SHIT?
+          DO YOU WANT TO BUY SOME <span>CHEAP</span> STUFF?
         </h1>
-        <h3>Some random cunt keep stealing the cart</h3>
+        <h3>Welcome to this wonderful e-commerce site</h3>
         <button className="hero-left-btn">Shop Now</button>
       </div>
       <div className="hero-right">
