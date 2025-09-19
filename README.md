@@ -1,4 +1,4 @@
-# Just some random project for fun
+# Just a small project for fun
 
 > Note: It is still in development
 
