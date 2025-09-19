@@ -2,7 +2,7 @@
 
 > Note: It is still in development
 
-How to run
+How to run:
 
 - Clone the repository to your computer.
 - Use a code editor like VS Code to open the file that you just cloned.
